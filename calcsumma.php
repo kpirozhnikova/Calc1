@@ -8,8 +8,10 @@ Summator
 <form method='GET'>
 <input type="text" name="arg1" value="">
 <input type="text" name="arg2" value="">
-<input type="submit" value="Сумма">
-</form>
+<input type="submit" value="Сумма" name="sum">
+<input type="submit" value="Вычитание" name="minus">
+<input type="submit" value="Умножение" name="multiply">
+<input type="submit" value="Деление" name="division">
 <?php
 if (isset($_GET['arg1']) && (isset($_GET['arg2']))) {
 	$a=$_GET['arg1'];
