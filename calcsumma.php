@@ -1,5 +1,8 @@
 <html>
 <head>
+<title>
+Summator
+</title>
 </head>
 <body>
 <form method='GET'>
