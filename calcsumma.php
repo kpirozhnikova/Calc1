@@ -1,24 +1,20 @@
-<html>
-<head>
-<title>
-Summator
-</title>
-</head>
-<body>
-<form method='GET'>
-<input type="text" name="arg1" value="">
-<input type="text" name="arg2" value="">
-<input type="submit" value="Сумма" name="sum">
-<input type="submit" value="Вычитание" name="minus">
-<input type="submit" value="Умножение" name="multiply">
-<input type="submit" value="Деление" name="division">
 <?php
-if (isset($_GET['arg1']) && (isset($_GET['arg2']))) {
-	$a=$_GET['arg1'];
-	$b=$_GET['arg2'];
-	$c=intval($_GET['arg1']) + intval($_GET['arg2']);
-	echo "<div>".$a. "+" .$b. "="  .$c. "</div>";
+function calc($arg1,$arg2,$action) {
+	if ($action == "add") {
+		return $arg1+$arg2;
+	} else if ($action =="sub") {
+		return $arg1-$arg2;
+	}
 }
 ?>
-</body>
-</html>
+<?php if(isset($_GET['$arg1']) && isset($_GET['arg2'])){
+if (isset($_GET['add'])){
+	$action='add';
+}else if (isset($_GET['sub'])){
+	$action='sub';
+}
+?>
+<div>
+Результат <?=calc($_GET['arg1'],$_GET['arg2'],$action)?>
+</div>
+<?php } ?>
